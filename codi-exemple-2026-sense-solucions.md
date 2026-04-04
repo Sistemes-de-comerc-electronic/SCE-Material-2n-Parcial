@@ -1,9 +1,9 @@
-Treballes en una empresa que ofereix una plataforma SaaS de **gestió de botigues en linia**. Ha arribat un company nou (que no ha cursat Sistemes de Comer Electronic) i l'heu posat a fer codi ja des del primer dia.
+Treballes en una empresa que ofereix una plataforma SaaS de **gestió de botigues en linia**. Ha arribat un company nou (que no ha cursat Sistemes de Comerç Electrònic) i l'heu posat a fer codi ja des del primer dia.
 
-Realitza una revisio exhaustiva del fragment de codi proporcionat a continuació. Per cada error que trobis:
-1.	**Descriu el problema:** Identifica la mala practica o l'error conceptual.
-2.	**Explica per que es un problema:** Justifica la teva observacio fent referencia als principis, patrons o conceptes vistos a classe (p. ex., SOLID, DDD, seguretat, rendiment, gestio d'errors, etc.) i explica les seves consequencies negatives.
-3.	**Proposa una solucio:** Descriu clarament com refactoritzaries o corregiries el codi per solucionar el problema.
+Realitza una revisió exhaustiva del fragment de codi proporcionat a continuació. Per cada error que trobis:
+1.	**Descriu el problema:** Identifica la mala pràctica o l'error conceptual.
+2.	**Explica perquè és un problema:** Justifica la teva observació fent referència als principis, patrons o conceptes vistos a classe (p. ex., SOLID, DDD, seguretat, rendiment, gestió d'errors, etc.) i explica les seves conseqüències negatives.
+3.	**Proposa una solució:** Descriu clarament com refactoritzaries o corregiries el codi per solucionar el problema.
 
 Si no trobes cap error pots posar **"LGTM" (Looks Good To Me)**.
 

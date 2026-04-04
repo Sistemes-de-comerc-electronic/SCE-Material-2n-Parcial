@@ -1,9 +1,9 @@
-Treballes en una empresa que ofereix una plataforma SaaS de **gestió de botigues en linia**. Ha arribat un company nou (que no ha cursat Sistemes de Comer Electronic) i l'heu posat a fer codi ja des del primer dia.
+Treballes en una empresa que ofereix una plataforma SaaS de **gestió de botigues en linia**. Ha arribat un company nou (que no ha cursat Sistemes de Comerç Electrònic) i l'heu posat a fer codi ja des del primer dia.
 
-Realitza una revisio exhaustiva del fragment de codi proporcionat a continuació. Per cada error que trobis:
-1.	**Descriu el problema:** Identifica la mala practica o l'error conceptual.
-2.	**Explica per que es un problema:** Justifica la teva observacio fent referencia als principis, patrons o conceptes vistos a classe (p. ex., SOLID, DDD, seguretat, rendiment, gestio d'errors, etc.) i explica les seves consequencies negatives.
-3.	**Proposa una solucio:** Descriu clarament com refactoritzaries o corregiries el codi per solucionar el problema.
+Realitza una revisió exhaustiva del fragment de codi proporcionat a continuació. Per cada error que trobis:
+1.	**Descriu el problema:** Identifica la mala pràctica o l'error conceptual.
+2.	**Explica perquè és un problema:** Justifica la teva observació fent referència als principis, patrons o conceptes vistos a classe (p. ex., SOLID, DDD, seguretat, rendiment, gestió d'errors, etc.) i explica les seves conseqüències negatives.
+3.	**Proposa una solució:** Descriu clarament com refactoritzaries o corregiries el codi per solucionar el problema.
 
 Si no trobes cap error pots posar **"LGTM" (Looks Good To Me)**.
 
@@ -149,34 +149,34 @@ class SubscriptionService
 
 ## Evaluació
 
-Es valorara que l'alumne hagi sigut capac de detectar els seguents elements al codi segons el nivell de complexitat.
+Es valorarà que l'alumne hagi estat capaç de detectar els següents elements al codi segons el nivell de complexitat.
 
 Si trobeu algun altre que no està en aquesta llista, es considerarà vàlid i el professor el tindrà en compte segons la categoria que cregui més adequada (obvi, normal o alta).
 
 ### Obvis (sense trobar aquests no es pot aprovar):
 
-Trobar-los tots son **2.5 punts** (0,5 punts per cada un).
+Trobar-los tots són **2.5 punts** (0,5 punts per cada un).
 
-- S'utilitzen cadenes de text literals ("basic", "professional", "enterprise", "active") directament a la logica sense ser constants ni enumeracions, fent el codi fragil i propes a errors tipografics indetectables.
-- El càlcul de la data de venciment utilitza +30 days en lloc d'un interval mensual real (+1 month o P1M). Per mesos de menys de 30 dies (febrer) o de 31, la data resultant sera incorrecta.
-- La URL d'un servei intern de notificacio esta escrita directament al codi en lloc d'estar en un fitxer de configuracio o variable d'entorn (.env), impedint canviar-la entre entorns (dev/staging/prod) sense tocar el codi.
-- Una excepcio critica es capturada i registrada al nivell info en lloc d'error. Això fa que si el codi falla per això no es vegi.
-- Dins el bucle de buildActiveReport, es llanca una consulta independent a la base de dades per cada subscripcio activa per obtenir l'usuari associat. Amb N subscripcions actives, aixo genera N+1 consultes (problema N+1 Queries). 
+- S'utilitzen cadenes de text literals ("basic", "professional", "enterprise", "active") directament a la lògica sense ser constants ni enumeracions, fent el codi fràgil i propens a errors tipogràfics indetectables.
+- El càlcul de la data de venciment utilitza +30 days en lloc d'un interval mensual real (+1 month o P1M). Per mesos de menys de 30 dies (febrer) o de 31, la data resultant serà incorrecta.
+- La URL d'un servei intern de notificació està escrita directament al codi en lloc d'estar en un fitxer de configuració o variable d'entorn (.env), impedint canviar-la entre entorns (dev/staging/prod) sense tocar el codi.
+- Una excepció crítica es capturada i registrada al nivell info en lloc d'error. Això fa que si el codi falla per això no es vegi.
+- Dins el bucle de buildActiveReport, es llança una consulta independent a la base de dades per cada subscripció activa per obtenir l'usuari associat. Amb N subscripcions actives, això genera N+1 consultes (problema N+1 Queries). 
 
 ### Normal
 
 Trobar-los tots és **1 punt** (0,2 punts per cada un).
 
-- A buildActiveReport, tot el contingut de la taula es carrega en memoria (findAll()) per filtrar-lo posteriorment en PHP. En un sistema amb milers de subscripcions, aixo pot esgotar la memoria del servidor. La query hauria de filtrar directament per status='active'.
-- El metode activate conte un condicional if/elseif que enumera tots els tipus de plans possibles. Afegir un nou tipus de pla requereix modificar directament aquest metode, violant el principi OCP (Open/Closed Principle). La solucio seria usar una configuracio externa, un mapa de plans o el patro Strategy.
-- Es registren dades sensibles de l'usuari (un token d'autenticacio) directament als logs del sistema. Qualsevol persona amb acces als logs pot obtenir tokens valids i suplantar la identitat d'usuaris.
-- A buildActiveReport, hi ha codi mort (instruccions escrites despres d'un return) que mai s'executara. Indica que el codi no ha estat revisat ni testat adequadament i confon qualsevol desenvolupador que el llegeixi.
+- A buildActiveReport, tot el contingut de la taula es carrega en memòria (findAll()) per filtrar-lo posteriorment en PHP. En un sistema amb milers de subscripcions, això pot esgotar la memòria del servidor. La query hauria de filtrar directament per status='active'.
+- El mètode activate conté un condicional if/elseif que enumera tots els tipus de plans possibles. Afegir un nou tipus de pla requereix modificar directament aquest mètode, violant el principi OCP (Open/Closed Principle). La solució seria usar una configuració externa, un mapa de plans o el patró Strategy.
+- Es registren dades sensibles de l'usuari (un token d'autenticació) directament als logs del sistema. Qualsevol persona amb accés als logs pot obtenir tokens vàlids i suplantar la identitat d'usuaris.
+- A buildActiveReport, hi ha codi mort (instruccions escrites després d'un return) que mai s'executarà. Indica que el codi no ha estat revisat ni testat adequadament i confon qualsevol desenvolupador que el llegeixi.
 
 ### Alta
 
 Trobar-los tots és **0.5 punt** (0,125 punts per cada un).
 
-- El metode getSubscription() porta un nom que indica una consulta, pero internament modifica l'estat de l'entitat i executa un flush() a la base de dades. Viola el principi CQS (Command Query Separation): els metodes que retornen informacio no han de tenir efectes secundaris. Cridar aquest metode de manera innocent des d'un altre lloc pot provocar renovacions no desitjades i escriptures no esperades.
-- La classe te dues responsabilitats clarament diferenciades: la gestio del cicle de vida de les subscripcions (activate, getSubscription) i la generacio d'informes (buildActiveReport). Viola el principi SRP (Single Responsibility Principle), dificultant el manteniment i les proves unitaries independents.
-- Si l'API de notificacio falla despres del flush, la subscripcio queda marcada com a activa a la BBDD pero el servei extern no ho sap, deixant l'estat inconsistent entre sistemes.
-- La crida a find() no comprova si el resultat és null, cosa que saltarà un error si la suscripcio no existeix.
+- El mètode getSubscription() porta un nom que indica una consulta, però internament modifica l'estat de l'entitat i executa un flush() a la base de dades. Viola el principi CQS (Command Query Separation): els mètodes que retornen informació no han de tenir efectes secundaris. Cridar aquest mètode de manera innocent des d'un altre lloc pot provocar renovacions no desitjades i escriptures no esperades.
+- La classe té dues responsabilitats clarament diferenciades: la gestió del cicle de vida de les subscripcions (activate, getSubscription) i la generació d'informes (buildActiveReport). Viola el principi SRP (Single Responsibility Principle), dificultant el manteniment i les proves unitaries independents.
+- Si l'API de notificació falla després del flush, la subscripció queda marcada com a activa a la BBDD però el servei extern no ho sap, deixant l'estat inconsistent entre sistemes.
+- La crida a find() no comprova si el resultat és null, cosa que saltarà un error si la subscripció no existeix.

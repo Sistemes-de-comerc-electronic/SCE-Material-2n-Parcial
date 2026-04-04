@@ -1,11 +1,11 @@
 ## Exercici 1 (4 punts)
 
-Treballes en una empresa que ofereix una plataforma SaaS de **gestió de botigues en linia**. Ha arribat un company nou (que no ha cursat Sistemes de Comer Electronic) i l'heu posat a fer codi ja des del primer dia.
+Treballes en una empresa que ofereix una plataforma SaaS de **gestió de botigues en linia**. Ha arribat un company nou (que no ha cursat Sistemes de Comerç Electrònic) i l'heu posat a fer codi ja des del primer dia.
 
-Realitza una revisio exhaustiva del fragment de codi proporcionat a continuació. Per cada error que trobis:
-1.	**Descriu el problema:** Identifica la mala practica o l'error conceptual.
-2.	**Explica per que es un problema:** Justifica la teva observacio fent referencia als principis, patrons o conceptes vistos a classe (p. ex., SOLID, DDD, seguretat, rendiment, gestio d'errors, etc.) i explica les seves consequencies negatives.
-3.	**Proposa una solucio:** Descriu clarament com refactoritzaries o corregiries el codi per solucionar el problema.
+Realitza una revisió exhaustiva del fragment de codi proporcionat a continuació. Per cada error que trobis:
+1.	**Descriu el problema:** Identifica la mala pràctica o l'error conceptual.
+2.	**Explica perquè és un problema:** Justifica la teva observació fent referència als principis, patrons o conceptes vistos a classe (p. ex., SOLID, DDD, seguretat, rendiment, gestió d'errors, etc.) i explica les seves conseqüències negatives.
+3.	**Proposa una solució:** Descriu clarament com refactoritzaries o corregiries el codi per solucionar el problema.
 
 Si no trobes cap error pots posar **"LGTM" (Looks Good To Me)**.
 
@@ -33,7 +33,7 @@ L'estudi de videojocs independent "PixelDreams" està a punt de publicar el seu 
 
 A més, per evitar la pirateria, l'estudi vol afegir una marca oculta al codi de cada joc venut. Aquesta marca ha de contenir la informació específica del comprador perquè, si el joc es filtra a internet, puguin identificar exactament quin usuari l'ha piratejat. Un desenvolupador suggereix fer servir la tècnica d'esteganografia anomenada **"Watermark"**.
 
-La sessio de l'usuari es gestiona amb un JWT que es guarda dins del codi font del joc. Un altre desenvolupador suggereix posar totes les dades del perfil de l'usuari (nom, email, adreça) dins del payload del JWT per estalviar consultes a la base de dades.
+La sessió de l'usuari es gestiona amb un JWT que es guarda dins del codi font del joc. Un altre desenvolupador suggereix posar totes les dades del perfil de l'usuari (nom, email, adreça) dins del payload del JWT per estalviar consultes a la base de dades.
 
 - Poden vendre el seu joc com a programari propietari (tancat) si inclou codi sota la llicència GNU GPL? Per què? (0.5 punts)
 - És correcta la tècnica que especifiquen per identificar l'usuari que ha piratejat el joc? Perquè? Argumenta com ho implementaries. (1 punt)
@@ -58,7 +58,7 @@ A la pràctica heu fet algo molt similar amb els DTO, si el backend afegeix un p
 
 - **Quin patró faries servir? Perquè? Argumenta com l'implementaries.**
 
-S'espera que l'alumne faci una proposta, si té sentit i no hi han problemes es donarà per bona.
+S'espera que l'alumne faci una proposta, si té sentit i no hi ha problemes es donarà per bona.
 
 Una possible solució: l'Event Store actua com a base de dades d'escriptura (Write Database), on s'enregistren les compres ràpidament sense bloquejos complexos. D'altra banda, es manté una base de dades de lectura (Read Database) optimitzada només per consultar la disponibilitat, la qual s'actualitza a partir dels esdeveniments de l'escriptura. Això separa la càrrega i elimina el coll d'ampolla central. S'espera que l'alumne mencioni afegir **caché** a les consultes que no requereixin dades en temps real (o netejar el caché quan es produeixi una compra) per millorar encara més el rendiment.
 
