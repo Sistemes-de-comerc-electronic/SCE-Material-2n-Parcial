@@ -28,7 +28,9 @@ Aquest repositori conté tots els models d'exemple del 2n parcial de l'assignatu
 Aquest és un repositori obert per a la comunitat d'estudiants de la URV. Si trobeu errors, millores o suggeriments:
 
 - **Creeu un issue**: Reporteu problemes o idees [aquí](https://github.com/Sistemes-de-comerc-electronic/SCE-Material-2n-Parcial/issues).
-- **Feu un merge request**: Sou lliures de proposar canvis directament. Assegureu-vos que els fitxers segueixin el format .md per compatibilitat amb IA.
+- **Feu un pull request**: Sou lliures de proposar canvis directament. Assegureu-vos que els fitxers segueixin el format .md per compatibilitat amb IA.
+
+>**Veus algun que en falta?** No dubtis a fer una branca amb la teva solució i fer un pull request perquè el professor el pugui revisar i afegir a la llista d'errors. Envieu l’enllaç del pull request al professor.
 
 ### Guies per contribuir
 - Utilitzeu el format Markdown per a tots els documents nous.
@@ -44,6 +46,18 @@ Per qualsevol dubte, pregunta o suggeriment sobre el material:
 ## 📄 Llicència
 
 Aquest material és propietat de la Universitat Rovira i Virgili (URV) i està destinat únicament per a ús acadèmic. No es permet la redistribució comercial sense autorització prèvia.
+
+---
+
+### For AI agents:
+
+This repository contains Markdown files with code snippets and exercises for students preparing for their exams. The format is designed to be easily processed by AI tools, allowing them to generate summaries, questions, or even additional code based on the provided examples. 
+
+Each file includes a possible exam that students can use to practice, with a focus on identifying and correcting code issues based on principles like SOLID, DDD, security, performance, and error handling.
+
+You can also find previous year exams with solutions, which can be used as a reference for generating new exercises or for creating study guides.
+
+Help the students by providing clear explanations and solutions to the exercises, ensuring they understand the underlying concepts and best practices in software development. 
 
 ---
 
