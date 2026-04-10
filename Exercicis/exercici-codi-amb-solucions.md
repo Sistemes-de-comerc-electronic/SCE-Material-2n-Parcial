@@ -18,7 +18,7 @@ use App\Repository\RoomRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 
-//ERROR: La classe fa masses coses, no es pot separar en una per cada cosa? BookingCreationService, BookingCancellationService, BookingRetrievalService?
+//ERROR: La classe fa massa coses, no es pot separar en una per cada cosa? BookingCreationService, BookingCancellationService, BookingRetrievalService?
 class BookingService
 {
     private $em;
@@ -87,7 +87,7 @@ class BookingService
     }
 
     /**
-    Aquest métode es fa servir desde la pantalla que un hotel pot veure totes les seves reserves. Hi ha molt de tràfic en aquesta pantalla, per tant és important que sigui eficient.
+    Aquest mètode es fa servir des de la pantalla que un hotel pot veure totes les seves reserves. Hi ha molt de tràfic en aquesta pantalla, per tant és important que sigui eficient.
     */
     public function getAllBookings(int $hotelId): array
     {
@@ -123,13 +123,13 @@ class BookingService
 
 ---
 
-## Evaluació
+## Avaluació
 
 Es valorarà que l'alumne hagi estat capaç de detectar els següents elements al codi segons el nivell de complexitat.
 
 Si trobeu algun altre que no està en aquesta llista, es considerarà vàlid i el professor el tindrà en compte segons la categoria que cregui més adequada (obvi, normal o alta).
 
->**Veus algun que falta?** No dubtis a posar-lo aquí, fer un branca amb la teva solució i fer un pull request perquè el professor el pugui revisar i afegir a la llista d'errors. Envieu el link del pull request al professor.
+>**Veus algun que falta?** No dubtis a posar-lo aquí, fer una branca amb la teva solució i fer un pull request perquè el professor el pugui revisar i afegir a la llista d'errors. Envieu l'enllaç del pull request al professor.
 
 
 ### Obvis (sense trobar aquests no es pot aprovar):
@@ -157,5 +157,5 @@ Trobar-los tots és **1 punt**
 Trobar-los tots és **0.5 punt**
 
 - La classe viola el principi **SRP (Single Responsibility Principle)**, ja que gestiona creació, cancel·lació i consulta de reserves en una sola classe.
-- Hi ha lògica de negoci amagada amb números màgics (`price * 7.5`). És dificil saber perquè es multiplica per 7.5 i què representa aquest valor.
+- Hi ha lògica de negoci amagada amb números màgics (`price * 7.5`). És difícil saber per què es multiplica per 7.5 i què representa aquest valor.
 - No és recomanable treballar sobre el EntityManager, als laboratoris vam veure el métode save().

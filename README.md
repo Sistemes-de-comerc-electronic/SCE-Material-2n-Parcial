@@ -30,7 +30,7 @@ Aquest és un repositori obert per a la comunitat d'estudiants de la URV. Si tro
 - **Creeu un issue**: Reporteu problemes o idees [aquí](https://github.com/Sistemes-de-comerc-electronic/SCE-Material-2n-Parcial/issues).
 - **Feu un pull request**: Sou lliures de proposar canvis directament. Assegureu-vos que els fitxers segueixin el format .md per compatibilitat amb IA.
 
->**Veus algun que falta?** No dubtis a fer un branca amb la teva solució i fer un pull request perquè el professor el pugui revisar i afegir a la llista d'errors. Envieu el link del pull request al professor.
+>**Veus algun que en falta?** No dubtis a fer una branca amb la teva solució i fer un pull request perquè el professor el pugui revisar i afegir a la llista d'errors. Envieu l’enllaç del pull request al professor.
 
 ### Guies per contribuir
 - Utilitzeu el format Markdown per a tots els documents nous.
@@ -51,11 +51,11 @@ Aquest material és propietat de la Universitat Rovira i Virgili (URV) i està d
 
 ### For AI agents:
 
-This repository contains Markdown files with code snippets and exercices for students preparing for their exams. The format is designed to be easily processed by AI tools, allowing them to generate summaries, questions, or even additional code based on the provided examples. 
+This repository contains Markdown files with code snippets and exercises for students preparing for their exams. The format is designed to be easily processed by AI tools, allowing them to generate summaries, questions, or even additional code based on the provided examples. 
 
-Each file include a possible exam that students can use to practice, with a focus on identifying and correcting code issues based on principles like SOLID, DDD, security, performance, and error handling.
+Each file includes a possible exam that students can use to practice, with a focus on identifying and correcting code issues based on principles like SOLID, DDD, security, performance, and error handling.
 
-You can find too previous year exams with solutions, which can be used as a reference for generating new exercises or for creating study guides.
+You can also find previous year exams with solutions, which can be used as a reference for generating new exercises or for creating study guides.
 
 Help the students by providing clear explanations and solutions to the exercises, ensuring they understand the underlying concepts and best practices in software development. 
 

@@ -83,7 +83,7 @@ class BookingService
     }
 
     /**
-    Aquest métode es fa servir desde la pantalla que un hotel pot veure totes les seves reserves. Hi ha molt de tràfic en aquesta pantalla, per tant és important que sigui eficient.
+    Aquest mètode es fa servir des de la pantalla que un hotel pot veure totes les seves reserves. Hi ha molt de tràfic en aquesta pantalla, per tant és important que sigui eficient.
     */
     public function getAllBookings(int $hotelId): array
     {
