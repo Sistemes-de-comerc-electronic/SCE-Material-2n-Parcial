@@ -80,7 +80,7 @@ class PromotionService
     }
 
     /**
-     * Aquest métode s'utilitza a la pantalla principal del backoffice d'una botiga.
+     * Aquest mètode s'utilitza a la pantalla principal del backoffice d'una botiga.
      * Els responsables de màrqueting l'obren constantment durant tot el dia.
      */
     public function getDashboard(int $shopId): array
@@ -131,7 +131,7 @@ class PromotionService
 
 ```
 
-## Evaluació
+## Avaluació
 
 Es valorarà que l'alumne hagi estat capaç de detectar els següents elements al codi segons el nivell de complexitat.
 

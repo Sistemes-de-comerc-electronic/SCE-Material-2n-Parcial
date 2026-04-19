@@ -121,7 +121,7 @@ class CatalogCacheService
 }
 ```
 
-## Evaluació
+## Avaluació
 
 Es valorarà que l'alumne hagi estat capaç de detectar els següents elements al codi segons el nivell de complexitat.
 
@@ -134,7 +134,7 @@ Trobar-los tots són **2.5 punts** (0,5 punts per cada un).
 - El servei fa servir **dues capes de caché diferents (APCu i Redis)** però, quan es modifica el preu d'un producte, només invalida Redis. APCu pot continuar retornant dades antigues, deixant el sistema amb resultats inconsistents segons quin servidor o procés atengui la petició.
 - A `getCatalog()`, es fa un `findAll()` i després es filtra per `shopId` en PHP, fent treball innecessari i malgastant memòria.
 - Dins del bucle principal es fa una consulta a `stockRepository` per cada producte, generant un problema de **N+1 queries**.
-- Hi ha diversos `foreach` inútils (`tags`, `images`) que no aporten cap valor, a més es calcula una varialbe que es matxaca.
+- Hi ha diversos `foreach` inútils (`tags`, `images`) que no aporten cap valor i, a més, es calcula una variable que se sobreescriu.
 - La crida a `find()` de `updatePrice()` no comprova si el producte existeix (`null`), cosa que pot acabar en error fatal.
 
 ### Normal

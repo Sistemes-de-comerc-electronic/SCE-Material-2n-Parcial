@@ -80,7 +80,7 @@ class PromotionService
     }
 
     /**
-     * Aquest métode s'utilitza a la pantalla principal del backoffice d'una botiga.
+     * Aquest mètode s'utilitza a la pantalla principal del backoffice d'una botiga.
      * Els responsables de màrqueting l'obren constantment durant tot el dia.
      */
     public function getDashboard(int $shopId): array
