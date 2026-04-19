@@ -157,5 +157,5 @@ Trobar-los tots és **0.5 punt**
 
 - La classe viola el principi **SRP (Single Responsibility Principle)**, ja que gestiona creació, cancel·lació i consulta de reserves en una sola classe.
 - Hi ha lògica de negoci amagada amb números màgics (`price * 7.5`). És difícil saber per què es multiplica per 7.5 i què representa aquest valor.
-- No és recomanable treballar sobre el EntityManager, als laboratoris vam veure el métode save().
+- No és recomanable treballar sobre l'`EntityManager`; als laboratoris vam veure el mètode `save()`.
 - Es fa servir accés directe al sistema de fitxers (`file_put_contents`) en lloc del sistema de logging de l’aplicació, fent el codi no portable i poc mantenible.
