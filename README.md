@@ -20,6 +20,7 @@ Aquest repositori conté tots els models d'exemple del 2n parcial de l'assignatu
    ```
 
 2. **Navega pels fitxers**: Obre els fitxers `.md` amb qualsevol editor de text o visualitzador de Markdown (com VS Code, GitHub, etc.).
+   - La carpeta `Exercicis` està organitzada per subcarpetes (`Exercici 1`, `Exercici 2`, etc.) i cada exercici acostuma a tenir una versió `sense-solucions` i una altra `amb-solucions`.
 
 3. **Estudia els exemples**: Cada fitxer conté exercicis, codi i solucions. Utilitza les IA per generar resums o preguntes addicionals basades en el contingut.
 
