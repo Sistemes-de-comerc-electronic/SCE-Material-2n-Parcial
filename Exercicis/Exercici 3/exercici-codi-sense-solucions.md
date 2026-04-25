@@ -27,26 +27,29 @@ class CatalogCacheService
     private $redis;
     private $em;
     private $logger;
+    private $apcuCacheManager;
 
     public function __construct(
         ProductRepository $productRepository,
         StockRepository $stockRepository,
         Client $redis,
         EntityManagerInterface $em,
-        LoggerInterface $logger
+        LoggerInterface $logger,
+        ApcuCacheManager $apcuCacheManager
     ) {
         $this->productRepository = $productRepository;
         $this->stockRepository = $stockRepository;
         $this->redis = $redis;
         $this->em = $em;
         $this->logger = $logger;
+        $this->apcuCacheManager = $apcuCacheManager;
     }
 
     public function getCatalog(int $shopId): array
     {
         $cacheKey = 'catalog_' . $shopId;
 
-        $localCache = apcu_fetch($cacheKey);
+        $localCache = $this->apcuCacheManager->get($cacheKey);
         if ($localCache) {
             return $localCache;
         }
@@ -54,7 +57,7 @@ class CatalogCacheService
         $redisCache = $this->redis->get($cacheKey);
         if ($redisCache) {
             $decoded = json_decode($redisCache, true);
-            apcu_store($cacheKey, $decoded, 3600);
+            $this->apcuCacheManager->set($cacheKey, $decoded, 3600);
 
             return $decoded;
         }
@@ -67,12 +70,16 @@ class CatalogCacheService
                 continue;
             }
 
+            $x = 0;
+
             foreach ($product->getTags() as $tag) {
-                $tag;
+                $x = $x + 1;
             }
 
+            $x = 0;
+
             foreach ($product->getImages() as $image) {
-                $image;
+                $x = $x + 1;
             }
 
             foreach ($product->getVariants() as $variant) {
@@ -90,7 +97,7 @@ class CatalogCacheService
             ];
         }
 
-        apcu_store($cacheKey, $result, 3600);
+        $this->apcuCacheManager->set($cacheKey, $result, 3600);
         $this->redis->setex($cacheKey, 86400, json_encode($result));
 
         return $result;
@@ -112,15 +119,6 @@ class CatalogCacheService
         ]);
 
         return true;
-    }
-
-    public function warmUpAllCatalogs(): void
-    {
-        $products = $this->productRepository->findAll();
-
-        foreach ($products as $product) {
-            $this->getCatalog($product->getShopId());
-        }
     }
 }
 ```
