@@ -165,4 +165,4 @@ class BookingCancellatorRequest
 }
 ```
 
-Si trobeu algun error més, sentiu-vos lliures de fer un pull-request anotant-ho aqui i fer-ho arribar al professorat.
+Si trobeu algun error més, sentiu-vos lliures de fer un pull-request anotant-ho aquí i fer-ho arribar al professorat.
