@@ -1,4 +1,4 @@
-Treballes en una empresa que ofereix una plataforma SaaS de **sistema de gestió de reserves per a hotels**. Un desenvolupador ha creat un nou servei per cancel·lar reserves i te l'ha fet arribar.
+Treballes en una empresa que ofereix una plataforma SaaS de **sistema de gestió de reserves per hotels**. Un desenvolupador ha creat un nou servei per cancelar reserves i te l'ha fet arribar.
 
 Realitza una revisió exhaustiva del fragment de codi proporcionat a continuació. Per cada error que trobis:
 1.	**Descriu el problema:** Identifica la mala pràctica o l'error conceptual.
@@ -165,3 +165,4 @@ class BookingCancellatorRequest
 }
 ```
 
+Si trobeu algun error més, sentiu-vos lliures de fer un pull-request anotant-ho aquí i fer-ho arribar al professorat.
